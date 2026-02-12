@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Practise Set</title>
+</head>
+
+<body>
+  <script>
+
+    // let copyProduct = product;
+    // console.log(product);
+    // copyProduct.size = 'M';
+    // console.log(product);
+    // copyProduct.fit = 'Regular Fit';
+    // console.log(product);
+
+    // console.log(product['delivery-time']);
+
+    // let obj = {
+    //   message: 'Good Job',
+    //   status: 'Complete',
+    // };
+    // console.log(obj);
+    // let {message, status} = obj;
+    // console.log(message);
+    // console.log(status);
+
+    function isIdenticalProduct(producta, productb) {
+      if (typeof producta !== 'object' || typeof productb !== 'object') {
+        console.warn('Parameter passed was not an object');
+        return false;
+      }
+
+      if (producta == productb) {        // as if name of obj is same
+        return true;
+      }
+
+      if (producta.name === productb.name &&
+        producta.size === productb.size &&
+        producta.fit === productb.fit) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+
+    let product = {
+      name: 'Jeans',
+      size: 'S',
+      fit: 'Slim Fit',
+      'delivery-time': 'Same day delivery',
+    };
+
+    let product2 = {
+      name: 'Jeans',
+      size: 'M',
+      fit: 'Slim Fit',
+      'delivery-time': 'Same day delivery',
+    };
+
+    let product3 = {
+      name: 'Jeans',
+      size: 'M',
+      fit: 'Slim Fit',
+      'delivery-time': 'Same day delivery',
+    };
+
+    console.log(isIdenticalProduct(product, ''));
+    console.log(isIdenticalProduct(product, product));
+    console.log(isIdenticalProduct(product, product2));
+    console.log(isIdenticalProduct(product3, product2));
+    console.log(isIdenticalProduct(product2, product3));
+
+
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+
+        <form>
+            <label for="name">Your Name: </label>
+            <input type="text" name="name" id="name"><br><br>
+            <label for="age">Your Age: </label>
+            <input type="text" id="age"><br>
+            <label for="male">Male: </label>
+            <input type="radio" name="gender" id="male" value="male" /><br>
+            <label for="female">Female: </label>
+            <input type="radio" name="gender" id="female" value="female" />
+        </form>
+    </div>
+    <button id="submit" onclick="msggg();">Submit</button>
+
+    <h3 id="msg"></h3>
+    <script>
+        function msggg() {
+            let name = document.getElementById('name').value;
+            let age = Number(document.getElementById('age').value);
+            let gender = document.querySelector('input[name=gender]:checked').value;
+
+            let finaldiscount;
+            if (age <= 5) {
+                finaldiscount = 100;
+            }
+            else if (gender === 'female' || (age > 5 && age <= 8)) {
+                finaldiscount = 50;
+            }
+
+            else if (age >= 65) {
+                finaldiscount = 30;
+            }
+            else {
+                finaldiscount = 0;
+            }
+
+            document.querySelector('#msg').innerText = `Your Name is ${name} , your gender is ${gender} and your age is ${age}. \n Hence Your final discount is ${finaldiscount}%.`
+
+        }
+
+
+    </script>
+</body>
+
+</html>

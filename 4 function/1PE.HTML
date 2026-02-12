@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+
+    Number: <input type="text" id="input">
+    <button onclick=" msg(); ">Submit</button>
+
+    <p id="msg"></p>
+
+    <script>
+        function evenodd(N) {
+            return N % 2 == 0 ? 'EVEN' : 'ODD';
+        }
+        function msg() {
+            let N = Number(document.getElementById('input').value)
+            let result = evenodd(N);
+            // let result = N % 2 == 0 ? 'EVEN' : 'ODD';
+            document.querySelector('#msg').innerText = `${result}`;
+        }
+
+        // function larger(num1 , num2 ){
+        //     if(num1>num2){
+        //         return num1;
+        //     } else {
+        //         return num2;
+        //     }
+        // }
+        // console.log(larger(4,5))
+        // console.log(larger(5,5))
+        // console.log(larger(9,5))
+
+    
+    </script>
+</body>
+
+</html>

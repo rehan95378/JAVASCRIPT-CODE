@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        .bag {
+            background-color: aqua;
+        }
+
+        .wish {
+            background-color: rgb(255, 255, 255);
+        }
+
+        button {
+            height: 60px;
+            width: 60px;
+            border: 2px solid black;
+            margin: 10px;
+            border-radius: 4px;
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+
+    <button class="bag" onclick="cart_quantity=cart_quantity+1;
+    document.querySelector('#cart_summary').innerText= `your bag has ${cart_quantity} items` ;">
+        Add to bag
+    </button>
+
+    <button class="wish" onclick="cart_quantity=cart_quantity-1;
+    document.querySelector('#cart_summary').innerText= `your bag has ${cart_quantity} items` ;">
+        Wishlist
+    </button>
+
+    <button class="bag" onclick="cart_quantity=cart_quantity+2;
+    document.querySelector('#cart_summary').innerText= `your bag has ${cart_quantity} items` ;">
+        add 1+1
+    </button>
+
+    <h1 id="cart_summary"></h1>
+</body>
+
+<script>
+    let cart_quantity = 0; 
+    document.querySelector('#cart_summary').innerText = `your bag has ${cart_quantity} items`;
+
+</script>
+
+</html>
